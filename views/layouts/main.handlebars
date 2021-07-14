@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC TECH BLOG</title>
+    <link rel="stylesheet" href="/public/stylesheet/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="hero">
+        <div>
+          <nav class="navbar">
+            <a class="links" href="/">HOME</a>
+            <a class="links" href="/dashboard">DASHBOARD</a>
+            {{#if loggedIn}}
+              <a class="links" id="logout" href="/">LOGOUT</a>
+            {{else}}
+              <a class="links" href="/login">LOGIN</a>
+            {{/if}}
+          </nav>
+        </div>
+        <h1 class="title"><i class="fab"></i>Tech Blog</h1>
+      </header>
+      <main>{{{body}}}</main>
+
+    </div>
+    <div>
+      {{#if loggedIn}}
+        <script src="/public/javascript/logout.js"></script>
+      {{/if}}
+    </div>
+
+  </body>
+</html>
